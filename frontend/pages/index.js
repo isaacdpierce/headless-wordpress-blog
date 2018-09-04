@@ -22,17 +22,19 @@ class Index extends Component {
 
   render() {
     const pages = this.props.pages.map((page, index) => (
-      <ul key={index}>
-        <li>
-          <Link as={`/page/${page.slug}`} href={`/post?slug=${page.slug}&apiRoute=page`}>
-            <a>{page.title.rendered}</a>
-          </Link>
-        </li>
-      </ul>
-    ));
+        <ul key={index}>
+          <li>
+            <Link
+              as={`/page/${page.slug}`}
+              href={`/post?slug=${page.slug}&apiRoute=page`}
+            >
+              <a>{page.title.rendered}</a>
+            </Link>
+          </li>
+        </ul>
+      ));
     return (
-      <Layout>
-        <Menu menu={this.props.headerMenu} />
+      <Layout {...this.props}>
         <img src="/static/images/wordpress-plus-react-header.png" width="815" style={headerImageStyle} />
         <h1>{this.props.page.title.rendered}</h1>
         <div
@@ -40,7 +42,6 @@ class Index extends Component {
             __html: this.props.page.content.rendered,
           }}
         />
-
         <h2>Pages</h2>
         {pages}
       </Layout>

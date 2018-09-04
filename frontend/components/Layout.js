@@ -9,17 +9,17 @@ const layoutStyle = {
 
 const mainLayout = {
   display: 'grid',
-  gridTemplateColumns: '80% 20%',
+  gridTemplateColumns: '70% 30%',
 };
 
 const Layout = props => (
   <div style={layoutStyle}>
-    <Header />
+    <Header mainNav={props.mainNav} />
     <main style={mainLayout}>
       <section>{props.children}</section>
       <aside>{props.index && <PostIndex />}</aside>
     </main>
-    <Footer />
+    <Footer footerNav={props.footerNav} />
   </div>
 );
 

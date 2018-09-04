@@ -5,7 +5,6 @@ import Menu from './Menu.js';
 import { Config } from '../config.js';
 import stylesheet from '../src/styles/style.scss';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Header extends Component {
   constructor() {
     super();
@@ -26,17 +25,7 @@ class Header extends Component {
               <h1>Wordpress Blog</h1>
             </a>
           </Link>
-          <nav>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </nav>
+          <Menu menu={this.props.mainNav} />
         </header>
       </div>
     );

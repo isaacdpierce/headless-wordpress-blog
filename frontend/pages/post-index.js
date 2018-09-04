@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
+import PageWrapper from '../components/PageWrapper.js';
 import Layout from '../components/Layout.js';
-import PostIndex from '../components/PostIndex.js';
+import PostIndex from '../components/PostIndex';
 import { Config } from '../config';
 
-// eslint-disable-next-line react/prefer-stateless-function
-export default class PostIndexPage extends Component {
+class PostIndexPage extends Component {
   render() {
     return (
-      <Layout index={false}>
+      <Layout index={false} {...this.props}>
         <h1>Post Index</h1>
-        <ul>
-          <PostIndex limit={20} />
-        </ul>
+        <PostIndex limit={20} />
       </Layout>
     );
   }
 }
+
+export default PageWrapper(PostIndexPage);
