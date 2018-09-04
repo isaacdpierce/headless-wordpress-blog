@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout.js';
 import PageWrapper from '../components/PageWrapper.js';
 import Menu from '../components/Menu.js';
+import Slider from '../components/Slider.js';
 import { Config } from '../config.js';
 
 const headerImageStyle = {
@@ -22,21 +23,18 @@ class Index extends Component {
 
   render() {
     const pages = this.props.pages.map((page, index) => (
-        <ul key={index}>
-          <li>
-            <Link
-              as={`/page/${page.slug}`}
-              href={`/post?slug=${page.slug}&apiRoute=page`}
-            >
-              <a>{page.title.rendered}</a>
-            </Link>
-          </li>
-        </ul>
-      ));
+      <ul key={index}>
+        <li>
+          <Link as={`/page/${page.slug}`} href={`/post?slug=${page.slug}&apiRoute=page`}>
+            <a>{page.title.rendered}</a>
+          </Link>
+        </li>
+      </ul>
+    ));
     return (
       <Layout {...this.props}>
-        <img src="/static/images/wordpress-plus-react-header.png" width="815" style={headerImageStyle} />
         <h1>{this.props.page.title.rendered}</h1>
+        <Slider />
         <div
           dangerouslySetInnerHTML={{
             __html: this.props.page.content.rendered,

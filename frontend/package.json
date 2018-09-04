@@ -23,6 +23,7 @@
         "install-peerdeps": "^1.8.0",
         "isomorphic-unfetch": "^2.0.0",
         "next": "latest",
+        "nuka-carousel": "^4.3.7",
         "react": "^16.0.0"
     },
     "devDependencies": {
