@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'isaacdpierce.com',
+        baseUrl: 'thewholemind.me',
         protocol: 'http',
         hostingWPCOM: false,
         useACF: true 
