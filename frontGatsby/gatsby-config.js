@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'localhost:8080',
+        baseUrl: 'isaacdpierce.com',
         protocol: 'http',
         hostingWPCOM: false,
         useACF: true 
