@@ -44,7 +44,7 @@
       result.data.allWordpressPost.edges.forEach(({node}) => {
         createPage({
           path: `posts/${node.slug}`,
-          component: path.resolve("./src/pages/page-2.js"),
+          component: path.resolve("./src/pages/post.js"),
           context: {
             slug: node.slug,
           },
